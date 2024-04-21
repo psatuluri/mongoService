@@ -30,7 +30,7 @@ exports = function({ query, headers, body} , response) {
           return products;
         }
         else if(query.requesttype == "product_reviews"){
-          const product_unique_code = req.unique_code;
+          const product_unique_code = query.unique_code;
           if (product_unique_code) {
             query.product_unique_code = product_unique_code;
           }
