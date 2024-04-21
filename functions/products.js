@@ -34,7 +34,7 @@ exports = function({ query, headers, body} , response) {
             query.product_unique_code = product_unique_code;
           }
           const prodReviews =  context.services.get("mongodb-atlas").db("reviewcentral").collection("product_reviews").find(condition).sort({ review_date: -1 });
-          return prodReview;
+          return prodReviews;
         }
         else{
           return "No Result";
