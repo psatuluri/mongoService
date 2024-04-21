@@ -1,0 +1,22 @@
+{
+    "name": "mongodb-atlas",
+    "type": "mongodb-atlas",
+    "config": {
+        "aggOptions": {
+            "forceAllowDiskUse": false
+        },
+        "clusterId": "661ad653761b8d47939f6948",
+        "clusterName": "Cluster0",
+        "clusterSize": "M0",
+        "clusterType": "atlas",
+        "clusterUpdated": 0,
+        "groupName": "Project 0",
+        "isLoadBalanced": false,
+        "lastUpdated": 1713035193,
+        "orgName": "reviewcentral's Org - 2024-04-13",
+        "readPreference": "primary",
+        "uri": "mongodb://ac-gmkepbz-shard-00-00.cwou4gc.mesh.mongodb.net:30558,ac-gmkepbz-shard-00-01.cwou4gc.mesh.mongodb.net:30558,ac-gmkepbz-shard-00-02.cwou4gc.mesh.mongodb.net:30558",
+        "wireProtocolEnabled": false
+    },
+    "version": 1
+}

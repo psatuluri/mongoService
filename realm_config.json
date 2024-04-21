@@ -1,0 +1,8 @@
+{
+    "app_id": "reviewcentral-ktron",
+    "config_version": 20210101,
+    "name": "reviewcentral",
+    "provider_region": "gcp-us-central1",
+    "deployment_model": "LOCAL",
+    "environment": "development"
+}
