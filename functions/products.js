@@ -1,29 +1,31 @@
 // This function is the endpoint's request handler.
 exports = function({ query, headers, body} , response) {
-        let condition = {};
+        //let condition = {};
+        
         if(query.requesttype == "products")
         {
           const search = query.search;
           const category = parseInt(query.category);
+          const condition = query.condition;
           
-          if (search) {
+          /*if (search) {
               // Split the search query into individual words
               const searchWords = search.split(' ');
-  
+              
               // Construct an array of regex patterns for each word
               const regexPatterns = searchWords.map(word => new RegExp('.*' + word + '.*', 'i'));
-  
+              //return regexPatterns;
               // Use the $in operator to match any of the words in the title or unique_code
               condition.$or = [
                 { title: { $in: regexPatterns } },
                 { unique_code: { $in: regexPatterns } }
               ];
-          }
+          }*/
   
-          if (category) {
-              condition.category_id = category;
-          }
-  
+          //if (category) {
+          //    condition.category_id = category;
+          //}
+          return condition;
           const products = context.services.get("mongodb-atlas").db("reviewcentral").collection("products").find(condition).sort({ title: -1 });
           
           return products;
