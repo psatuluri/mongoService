@@ -1,6 +1,6 @@
 // This function is the endpoint's request handler.
 exports = function({ req, headers, body}, response) {
-        const search = req.search;
+        const search = req;
         const category = parseInt(1);
         let query = {};
 
