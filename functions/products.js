@@ -18,9 +18,9 @@ exports = function({ req, headers, body}, response) {
             ];
         }
 
-        if (category) {
-            req.category_id = category;
-        }
+        //if (category) {
+        //    req.category_id = category;
+        //}
 
         const products = context.services.get("mongodb-atlas").db("reviewcentral").collection("products").find().sort({ title: -1 });
         return products;
