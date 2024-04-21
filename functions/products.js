@@ -22,6 +22,6 @@ exports = function({ req, headers, body}, response) {
             req.category_id = category;
         }
 
-        const products = context.services.get("mongodb-atlas").db("dbname").collection("coll_name").find().sort({ title: -1 });
+        const products = context.services.get("mongodb-atlas").db("reviewcentral").collection("products").find().sort({ title: -1 });
         return products;
 };
