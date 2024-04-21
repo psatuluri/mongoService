@@ -1,6 +1,6 @@
 [
     {
-        "http_method": "POST",
+        "http_method": "GET",
         "route": "/reviewcentral",
         "function_name": "products",
         "validation_method": "NO_VALIDATION",
