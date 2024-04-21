@@ -23,5 +23,5 @@ exports = function(req) {
         //}
 
         const products = context.services.get("mongodb-atlas").db("reviewcentral").collection("products").find().sort({ title: -1 });
-        return products;
+        return req.search;
 };
