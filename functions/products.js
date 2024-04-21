@@ -1,6 +1,6 @@
 // This function is the endpoint's request handler.
 exports = function({ req, headers, body} , response) {
-        if(req.requsttype == "products")
+        if(req.requesttype == "products")
         {
           const search = req.search;
           const category = parseInt(req.category);
@@ -28,7 +28,7 @@ exports = function({ req, headers, body} , response) {
           
           return products;
         }
-        else if(req.requsttype == "product_reviews"){
+        else if(req.requesttype == "product_reviews"){
           const product_unique_code = req.unique_code;
           if (product_unique_code) {
             query.product_unique_code = product_unique_code;
