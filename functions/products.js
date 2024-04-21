@@ -1,12 +1,11 @@
 // This function is the endpoint's request handler.
 exports = function({ query, headers, body} , response) {
-        
+        let condition = {};
         if(query.requesttype == "products")
         {
           const search = query.search;
           const category = parseInt(query.category);
-          let condition = {};
-  
+          
           if (search) {
               // Split the search query into individual words
               const searchWords = search.split(' ');
