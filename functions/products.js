@@ -1,6 +1,6 @@
 // This function is the endpoint's request handler.
 exports = function(req) {
-        const search = req.search;
+        const search = req;
         const category = parseInt(1);
         let query = {};
 
@@ -23,5 +23,5 @@ exports = function(req) {
         //}
 
         const products = context.services.get("mongodb-atlas").db("reviewcentral").collection("products").find().sort({ title: -1 });
-        return req.search;
+        return req;
 };
