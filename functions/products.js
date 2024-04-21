@@ -1,5 +1,6 @@
 // This function is the endpoint's request handler.
 exports = function({ req, headers, body} , response) {
+        return req;
         if(req.requesttype == "products")
         {
           const search = req.search;
