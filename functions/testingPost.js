@@ -12,7 +12,7 @@ exports = async function MyCustomEndpoint(request, response) {
     const searchWords = requesttype.split(' ');
 
     // Construct an array of regex patterns for each word
-    const products = context.services.get("mongodb-atlas").db("reviewcentral").collection("products").find().sort({ title: -1 });
+    const products = context.services.get("mongodb-atlas").db("reviewcentral").collection("products").find(filter).sort({ title: -1 });
     // 3. Configure the response
     response.setStatusCode(201);
     // tip: You can also use EJSON.stringify instead of JSON.stringify.
