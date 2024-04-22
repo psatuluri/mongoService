@@ -16,12 +16,7 @@ exports = async function MyCustomEndpoint(request, response) {
     // 3. Configure the response
     response.setStatusCode(201);
     // tip: You can also use EJSON.stringify instead of JSON.stringify.
-    response.setBody(
-      JSON.stringify({
-        products,
-        message: "Successfully saved the request body",
-      })
-    );
+    response.setBody(products);
   } catch (error) {
     response.setStatusCode(400);
     response.setBody(error.message);
