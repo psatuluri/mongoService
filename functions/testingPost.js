@@ -13,7 +13,7 @@ exports = async function MyCustomEndpoint(request, response) {
     // tip: You can also use EJSON.stringify instead of JSON.stringify.
     response.setBody(
       JSON.stringify({
-        body,
+        requesttype,
         message: "Successfully saved the request body",
       })
     );
