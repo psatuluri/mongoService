@@ -7,13 +7,17 @@ exports = async function MyCustomEndpoint(request, response) {
     const body = JSON.parse(request.body.text());
     const requesttype = body.query.requesttype;
     // 2. Handle the request
-    
+    // Split the search query into individual words
+    const searchWords = requesttype.split(' ');
+
+    // Construct an array of regex patterns for each word
+    const regexPatterns = searchWords.map(word => new RegExp('.*' + word + '.*', 'i'));
     // 3. Configure the response
     response.setStatusCode(201);
     // tip: You can also use EJSON.stringify instead of JSON.stringify.
     response.setBody(
       JSON.stringify({
-        requesttype,
+        regexPatterns,
         message: "Successfully saved the request body",
       })
     );
