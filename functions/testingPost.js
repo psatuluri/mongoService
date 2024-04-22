@@ -5,6 +5,7 @@ exports = async function MyCustomEndpoint(request, response) {
       throw new Error(`Request body was not defined.`);
     }
     const body = JSON.parse(request.body.text());
+    const requesttype = request.body.query.requesttype;
     // 2. Handle the request
     
     // 3. Configure the response
@@ -12,7 +13,7 @@ exports = async function MyCustomEndpoint(request, response) {
     // tip: You can also use EJSON.stringify instead of JSON.stringify.
     response.setBody(
       JSON.stringify({
-        body,
+        requesttype,
         message: "Successfully saved the request body",
       })
     );
