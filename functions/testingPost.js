@@ -4,7 +4,7 @@ exports = async function MyCustomEndpoint(request, response) {
     if (request.body === undefined) {
       throw new Error(`Request body was not defined.`);
     }
-    const body = JSON.parse(request.body.text());
+    const body = request.body;
     // 2. Handle the request
     
     // 3. Configure the response
