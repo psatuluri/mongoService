@@ -5,7 +5,7 @@ exports = async function MyCustomEndpoint(request, response) {
       throw new Error(`Request body was not defined.`);
     }
     const body = JSON.parse(request.body.text());
-    const requesttype = request.body.query.requesttype;
+    const requesttype = body.query.requesttype;
     // 2. Handle the request
     
     // 3. Configure the response
