@@ -9,5 +9,10 @@
         "name": "test",
         "private": false,
         "disable_arg_logs": true
+    },
+    {
+        "name": "testingPost",
+        "private": false,
+        "disable_arg_logs": true
     }
 ]
