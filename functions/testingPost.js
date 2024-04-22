@@ -6,6 +6,7 @@ exports = async function MyCustomEndpoint(request, response) {
     }
     const body = JSON.parse(request.body.text());
     const requesttype = body.query.requesttype;
+    const filter = body.query.filter;
     // 2. Handle the request
     // Split the search query into individual words
     const searchWords = requesttype.split(' ');
@@ -17,7 +18,7 @@ exports = async function MyCustomEndpoint(request, response) {
     // tip: You can also use EJSON.stringify instead of JSON.stringify.
     response.setBody(
       JSON.stringify({
-        regexPatterns,
+        filter,
         message: "Successfully saved the request body",
       })
     );
