@@ -31,6 +31,14 @@ exports = async function MyCustomEndpoint(request, response) {
       const prodReviews =  context.services.get("mongodb-atlas").db("reviewcentral").collection("product_reviews").find(query).sort({ review_date: -1 });
       return prodReviews;
     }
+      else if(requesttype == 'product_details'){
+      const product_unique_code = body.query.unique_code;
+      if (product_unique_code) {
+        query.unique_code = product_unique_code;
+      }
+      const prodReviews =  context.services.get("mongodb-atlas").db("reviewcentral").collection("products").find(query).sort({ review_date: -1 }).limit(1);
+      return prodReviews;
+    }
     else{
       return "Input Not Valid";
     }
